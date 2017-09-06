@@ -3,7 +3,7 @@
     <version value="1"/>
     <list>
         <mapping class="com.ft.coolweather.db.Province"/>
-        <mapping class="com.ft.coolweather.db.Province"/>
-        <mapping class="com.ft.coolweather.db.Province"/>
+        <mapping class="com.ft.coolweather.db.City"/>
+        <mapping class="com.ft.coolweather.db.Couty"/>
     </list>
 </litepal>
