@@ -1,5 +1,6 @@
 package com.ft.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.ft.coolweather.gson.Forecast;
 import com.ft.coolweather.gson.Weather;
+import com.ft.coolweather.service.AutoUpdateService;
 import com.ft.coolweather.until.HttpUtil;
 import com.ft.coolweather.until.Utility;
 
@@ -50,7 +52,7 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView sportText;
     private ImageView bingPicImg;
     public SwipeRefreshLayout swipRefresh;
-    private String mWeatherId;
+    public String mWeatherId;
     public DrawerLayout drawerlayout;
     public Button navbutton;
 
@@ -234,6 +236,9 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
+
 
 
 
